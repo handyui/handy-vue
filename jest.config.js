@@ -17,7 +17,7 @@ module.exports = {
     '<rootDir>/src/**/**/*.spec.js',
     '<rootDir>/src/**/**/*.spec.ts'
   ],
-  preset: 'ts-jest',
+  // preset: 'ts-jest',
   // coverageProvider: 'v8'
   // 'testURL': 'http://localhost',
   // 'collectCoverage': true,

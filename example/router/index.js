@@ -17,7 +17,7 @@ const routes = [
   {
     path: '/button',
     name: 'button',
-    component: () => import('../components/button.vue')
+    component: () => import('../button.vue')
   }
   //   {
   //     path: '/detail/:id',

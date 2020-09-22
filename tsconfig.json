@@ -1,57 +1,29 @@
 {
-  "importHelpers": true,
   "compilerOptions": {
-    // "esModuleInterop": true,
-    // "types": ["jest", "node"],
-    // "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "docs": ["docs/*"],
-      "site":  ["site/*"]
-    },
-    // "lib": ["es2015", "dom"],
-    // "jsx": "preserve",
-    // "target": "esnext",
-    // "module": "esnext",
-    // "strict": true,
-    // "allowJs": true,
-    // "noEmit": true,
-    // "noImplicitThis": true,
-    // "moduleResolution": "node"
     "baseUrl": ".",
-    "jsx": "preserve",
-    "target": "esnext",
-    "module": "esnext",
+    "outDir": "dist",
+    "sourceMap": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowJs": false,
     "strict": true,
-    "allowJs": true,
-    "noEmit": true,
-    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
     "esModuleInterop": true,
-    "moduleResolution": "node"
+    "removeComments": false,
+    "jsx": "preserve",
+    "lib": ["ESNext", "DOM"],
+    "types": ["node"],
+    "rootDir": ".",
+    "paths": { "@": ["src"] }
   },
-  "include": [
-    // "src/**/*.ts",
-    // "src/**/*.tsx",
-    // "src/**/*.vue",
-    // "site/**/*.vue",
-    // "example/**/*.vue",
-    // "index.d.ts",
-    // "src/**/*",
-    "src/**/*.ts",
-    "src/**/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "src/*.vue",
-    "styles/**/*",
-    "tests/**/*.ts",
-    "tests/**/*.tsx",
-    "site/**/*",
-    "example/**/*"
-  ],
+  "include": ["site/**/*", "example/**/*","src/**/*", "styles/**/*"],
   "exclude": [
     "**/*.spec.ts",
     "**/*.spec.js",
     "node_modules"
-  ],
-  "resolveJsonModule": true
+  ]
 }
+

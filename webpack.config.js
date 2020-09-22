@@ -1,27 +1,34 @@
-const path = require('path');
-const config = require('../config');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-function resolve(dir) {
-  return path.join(__dirname, '..', dir);
-}
-
-const allSource = [resolve('src'), resolve('example'), resolve('test')];
+const path = require("path");
+const { VueLoaderPlugin } = require("vue-loader");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  mode: "development",
+  devtool: "cheap-module-eval-source-map",
+  entry: "./src/index.ts",
   output: {
-    path: config.build.assetsRoot,
-    publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
-    filename: '[name].js',
-    chunkFilename: '[name].js',
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
+    filename: "index.js",
   },
   resolve: {
-    extensions: ['.js', '.vue', '.md', '.json', '.ts', '.tsx'],
     alias: {
-      '@': resolve('src'),
-      docs: resolve('docs'),
-      site: resolve('site'),
+      vue: "@vue/runtime-dom",
+      "@": path.resolve("src"),
     },
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".vue", ".json"],
+    modules: ["node_modules"],
+  },
+  devServer: {
+    inline: true,
+    hot: true,
+    stats: "minimal",
+    historyApiFallback: true,
+    contentBase: path.resolve(__dirname, "public"),
+    overlay: true,
+    clientLogLevel: "error",
+    compress: true,
+    quiet: true,
   },
   module: {
     rules: [
@@ -48,13 +55,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          // { loader: "style-loader" },
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: true,
-            },
-          },
+          { loader: "style-loader" },
           { loader: "css-loader" },
           { loader: "postcss-loader" },
         ],
@@ -101,4 +102,11 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new VueLoaderPlugin(),
+    new HtmlWebpackPlugin({
+      template: "public/index.html",
+      favicon: "public/favicon.ico",
+    }),
+  ],
 };

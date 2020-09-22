@@ -1,4 +1,5 @@
-import Button from './button/index'
+import {App} from 'vue'
+import Button from "./button"
 
 const version = '1.0.0';
 const components = [
@@ -16,10 +17,11 @@ const components = [
 //   install(window.Vue);
 // }
 
-const install = function(app) {
-    components.map(component => {
-      app.use(component);
-    });
+const install = function (app: App) {
+  components.forEach(({ install }) => {
+    if (!install) return;
+    app.use(install);
+  });
 };
 
 

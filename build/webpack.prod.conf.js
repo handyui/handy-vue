@@ -18,7 +18,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   externals: ['vue', 'autosize', 'zscroller', 'moment'],
   entry: entries,
-  // entry: path.join(__dirname, '../src/index.ts'),
+  // entry: path.resolve(__dirname, "../src/index.ts"),
   output: {
     path: path.resolve(__dirname, '../release/lib'),
     filename: '[name].js',
