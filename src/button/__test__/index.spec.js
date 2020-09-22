@@ -1,5 +1,5 @@
 import {shallowMount} from '@vue/test-utils'
-import Button from '../index.vue'
+import Button from '../src/index.vue'
 
 describe('Button.vue', ()=>{
   it('renders props.msg when passed', ()=>{

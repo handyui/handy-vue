@@ -1,4 +1,4 @@
-import {App} from 'vue'
+import { App } from 'vue'
 import Button from "./button"
 
 const version = '1.0.0';

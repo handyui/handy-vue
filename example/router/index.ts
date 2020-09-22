@@ -2,8 +2,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 
-// const routes: Array<RouteConfig> = [
 const routes = [
+// const routes = [
   {
     path: '/',
     // redirect: '/largeUpload'
@@ -17,7 +17,7 @@ const routes = [
   {
     path: '/button',
     name: 'button',
-    component: () => import('../button.vue')
+    component: () => import('../components/button.vue')
   }
   //   {
   //     path: '/detail/:id',

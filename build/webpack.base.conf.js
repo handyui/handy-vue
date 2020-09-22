@@ -18,6 +18,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.md', '.json', '.ts', '.tsx'],
     alias: {
+      // vue: "@vue/runtime-dom",
       '@': resolve('src'),
       docs: resolve('docs'),
       site: resolve('site'),
@@ -38,12 +39,7 @@ module.exports = {
       },
       {
         test: /\.md$/,
-        use: [
-          { loader: "vue-loader" },
-          {
-            loader: "./build/markdown-loader.js",
-          },
-        ],
+        use: ['vue-loader', require.resolve("../packages/markdown-loader/src/index")]
       },
       {
         test: /\.css$/,

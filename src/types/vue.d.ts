@@ -1,3 +1,4 @@
+
 import { App, ComponentCustomOptions } from "vue";
 
 declare module "@vue/runtime-core" {
