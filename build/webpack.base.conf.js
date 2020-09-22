@@ -71,16 +71,25 @@ module.exports = {
       },
       {
         test: /\.(svg|png|jpe?g|gif|webp|ico)(\?.*)?$/,
-        use: {
-          loader: "url-loader",
+        use:
+        //  {
+        //   loader: "url-loader",
+        //   options: {
+        //     limit: 4096,
+        //     fallback: {
+        //       loader: "file-loader",
+        //       options: { name: "img/[name].[hash:8].[ext]" },
+        //     },
+        //   },
+        // },
+        {
+          loader: 'url-loader',
           options: {
+            esModule: false,
             limit: 4096,
-            fallback: {
-              loader: "file-loader",
-              options: { name: "img/[name].[hash:8].[ext]" },
-            },
+            name: 'img/[name].[hash:7].[ext]',
           },
-        },
+        }
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
@@ -94,6 +103,18 @@ module.exports = {
             },
           },
         },
+      },
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        use:[
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              name: 'media/[name].[hash:7].[ext]',
+            },
+          }
+        ]
       },
     ],
   },
