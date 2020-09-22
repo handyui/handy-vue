@@ -1,0 +1,225 @@
+// @import "../../styles/variables.scss";
+$-color--text-primary:#333;
+$-color--primary:#333;
+$-color--border-base: #f60;
+$-color--disabled-color:grey;
+$-color--disabled-background-color: grey;
+$-color--disabled-border-color: grey;
+$-color--primary: blue;
+$-color--success: green;
+$-color--warning: yellow;
+$-color--danger:red;
+
+.ha-button{
+  line-height: 30px;
+  background: $-color--primary;
+}
+
+.v-button {
+    line-height: 1.5;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    background-image: none;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    user-select: none;
+    touch-action: manipulation;
+    border-radius: 2px;
+    color: $-color--text-primary;
+    background-color: #fff;
+    border-color: $-color--border-base;
+    appearance: button;
+    cursor: pointer;
+  
+    &:active,
+    &:focus {
+      outline: 0;
+    }
+  }
+  
+  .v-button--type-default {
+    &:hover {
+      color: $-color--primary;
+      background-color: #fff;
+      border-color: $-color--primary;
+    }
+  
+    &:active {
+      color: darken($-color--primary, 10%);
+      background-color: #fff;
+      border-color: darken($-color--primary, 10%);
+    }
+  }
+  
+  .v-button--size-large {
+    height: 40px;
+    padding: 6px 15px;
+    font-size: 16px;
+  
+    &.v-button--shape-round {
+      height: 40px;
+      padding: 6px 20px;
+      border-radius: 40px;
+    }
+  
+    &.v-button--shape-circle {
+      min-width: 40px;
+    }
+  }
+  
+  .v-button--size-default {
+    height: 32px;
+    padding: 4px 15px;
+    font-size: 14px;
+  
+    &.v-button--shape-round {
+      height: 32px;
+      padding: 4px 16px;
+      border-radius: 32px;
+    }
+  
+    &.v-button--shape-circle {
+      min-width: 32px;
+    }
+  }
+  
+  .v-button--size-small {
+    height: 24px;
+    padding: 0 7px;
+    font-size: 14px;
+  
+    &.v-button--shape-round {
+      height: 24px;
+      padding: 0 12px;
+      border-radius: 24px;
+    }
+  
+    &.v-button--shape-circle {
+      min-width: 24px;
+    }
+  }
+  
+  .v-button--shape-circle {
+    padding-right: 0;
+    padding-left: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  .v-button--disabled {
+    cursor: not-allowed;
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      color: $-color--disabled-color;
+      background-color: $-color--disabled-background-color;
+      border-color: $-color--disabled-border-color;
+    }
+  }
+  
+  $color-maps: (
+    primary: $-color--primary,
+    success: $-color--success,
+    warning: $-color--warning,
+    danger: $-color--danger,
+  );
+  
+  @each $key in map-keys($color-maps) {
+    $color: map-get($color-maps, $key);
+  
+    .v-button--type-#{$key} {
+      border-color: $color;
+      background: $color;
+      color: #ffffff;
+  
+      &:hover {
+        border-color: mix($color, #ffffff, 90%);
+        background: mix($color, #ffffff, 90%);
+      }
+  
+      &:active {
+        border-color: mix($color, #000000, 90%);
+        background: mix($color, #000000, 90%);
+      }
+  
+      &.v-button--plain {
+        color: $color;
+        background: #ffffff;
+      }
+  
+      &.v-button--link {
+        color: $color;
+        border-width: 0;
+        background-color: #ffffff;
+        box-shadow: none;
+      }
+  
+      &.v-button--disabled {
+        color: #ffffff;
+  
+        &,
+        &:focus,
+        &:hover,
+        &:active {
+          border-color: mix($color, #ffffff, 60%);
+          background: mix($color, #ffffff, 60%);
+        }
+  
+        &.v-button--dashed,
+        &.v-button--plain {
+          background-color: #ffffff;
+          color: mix($color, #ffffff, 60%);
+        }
+  
+        &.v-button--link {
+          color: mix($color, #ffffff, 60%);
+          border-width: 0;
+          background-color: #ffffff;
+        }
+      }
+    }
+  }
+  
+  .v-button--icon {
+    line-height: 1;
+    font-size: 16px;
+  }
+  
+  .v-button--text {
+    line-height: 1;
+  }
+  
+  .v-button--icon + .v-button--text {
+    margin-left: 6px;
+    line-height: 16px;
+  }
+  
+  .v-button--dashed {
+    border-style: dashed;
+  }
+  
+  .v-button--loading-icon {
+    line-height: 1;
+    padding-right: 8px;
+  
+    > i {
+      display: inline-block;
+      animation: vButtonLoading 1s infinite linear;
+    }
+  }
+  
+  .v-button--shape-circle .v-button--loading-icon {
+    padding-right: 0;
+  }
+  
+  @keyframes vButtonLoading {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
