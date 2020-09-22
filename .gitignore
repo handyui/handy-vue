@@ -10,10 +10,11 @@ lib/
 release/
 docs/_book
 coverage/
-package-lock.json*
+
 
 # package & yarn lock
 # yarn.lock
+package-lock.json
 
 # Editor directories and files
 .vscode
