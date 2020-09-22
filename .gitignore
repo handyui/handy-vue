@@ -9,11 +9,11 @@ test/e2e/reports
 lib/
 release/
 docs/_book
-pnpm/
+coverage/
 
 # package & yarn lock
 # yarn.lock
-# package-lock.json
+package-lock.json
 
 # Editor directories and files
 .vscode
