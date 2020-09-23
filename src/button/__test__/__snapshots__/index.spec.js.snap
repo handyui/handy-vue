@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button.vue renders props.type when passed 1`] = `
+VueWrapper {
+  "__app": Object {
+    "_component": Object {
+      "__props": Array [],
+      "name": "VTU_ROOT",
+      "render": [Function],
+    },
+    "_container": <div
+      data-v-app=""
+      id="app"
+    >
+      <button
+        class="ha-button   ha-button--default   ha-button--normal        ha-button--normal"
+        style="color: rgb(255, 255, 255);"
+      >
+        <div
+          class="ha-button__content"
+        >
+          <span
+            class="ha-button__text"
+          >
+            
+            
+          </span>
+        </div>
+      </button>
+    </div>,
+    "_context": Object {
+      "app": [Circular],
+      "components": Object {},
+      "config": Object {
+        "errorHandler": undefined,
+        "globalProperties": Object {},
+        "isCustomElement": [Function],
+        "isNativeTag": [Function],
+        "optionMergeStrategies": Object {},
+        "performance": false,
+        "warnHandler": undefined,
+      },
+      "directives": Object {},
+      "mixins": Array [
+        Object {
+          "__props": Array [],
+          "beforeCreate": [Function],
+        },
+        Object {
+          "__props": Array [],
+          "beforeCreate": [Function],
+        },
+      ],
+      "provides": Object {},
+      "reload": [Function],
+    },
+    "_props": null,
+    "component": [Function],
+    "config": Object {
+      "errorHandler": undefined,
+      "globalProperties": Object {},
+      "isCustomElement": [Function],
+      "isNativeTag": [Function],
+      "optionMergeStrategies": Object {},
+      "performance": false,
+      "warnHandler": undefined,
+    },
+    "directive": [Function],
+    "mixin": [Function],
+    "mount": [Function],
+    "provide": [Function],
+    "unmount": [Function],
+    "use": [Function],
+    "version": "3.0.0-rc.5",
+  },
+  "__setProps": [Function],
+  "componentVM": Object {
+    "__emitted": Object {},
+    "classes": Array [
+      "ha-button",
+      Object {
+        "ha-button--primary": false,
+      },
+      Object {
+        "ha-button--info": false,
+      },
+      Object {
+        "ha-button--default": true,
+      },
+      Object {
+        "ha-button--danger": false,
+      },
+      Object {
+        "ha-button--warning": false,
+      },
+      "ha-button--normal",
+      Object {
+        "ha-button--plain": false,
+      },
+      Object {
+        "ha-button--hairline": false,
+      },
+      Object {
+        "ha-hairline--surround": false,
+      },
+      Object {
+        "ha-button--disabled": false,
+      },
+      Object {
+        "ha-button--loading": false,
+      },
+      Object {
+        "ha-button--square": false,
+      },
+      Object {
+        "ha-button--round": false,
+      },
+      Object {
+        "ha-button--normal": "normal",
+      },
+    ],
+    "color": "",
+    "disabled": false,
+    "hairline": false,
+    "icon": "",
+    "isIcon": "",
+    "loading": false,
+    "loadingText": "",
+    "loadingType": "circular",
+    "onClick": [Function],
+    "plain": false,
+    "prefixCls": "ha-button",
+    "round": false,
+    "size": "normal",
+    "square": false,
+    "styles": Object {
+      "background": "",
+      "color": "#fff",
+    },
+    "to": "",
+    "type": "default",
+    "url": "",
+  },
+  "rootVM": Object {
+    "__emitted": Object {},
+  },
+}
+`;

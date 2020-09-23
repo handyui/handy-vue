@@ -1,4 +1,4 @@
-@import '../../../styles/var.scss';
+@import '../../../styles/_variables';
 
 .ha-button {
   position: relative;
@@ -172,5 +172,12 @@
     &.ha-button--square::after {
       border-radius: 0;
     }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
   }
 }

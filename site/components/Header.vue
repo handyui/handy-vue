@@ -111,8 +111,7 @@ nav {
   float: right;
   height: 65px;
   line-height: 65px;
-  margin-right: 100px;
-
+  
   ul {
     list-style: none;
     margin: 0;

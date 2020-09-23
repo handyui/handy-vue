@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading.vue renders props.msg when passed 1`] = `
+VueWrapper {
+  "__app": Object {
+    "_component": Object {
+      "__props": Array [],
+      "name": "VTU_ROOT",
+      "render": [Function],
+    },
+    "_container": <div
+      data-v-app=""
+      id="app"
+    >
+      <div
+        class="ha-loading ha-loading--circular"
+      >
+        <span
+          class="ha-loading__spinner  ha-loading__spinner--circular"
+          style="color: rgb(201, 201, 201); width: 30px; height: 30px;"
+        >
+          <svg
+            class="ha-loading__circular"
+            viewBox="25 25 50 50"
+          >
+            <circle
+              cx="50"
+              cy="50"
+              fill="none"
+              r="20"
+            />
+          </svg>
+        </span>
+        <!--v-if-->
+      </div>
+    </div>,
+    "_context": Object {
+      "app": [Circular],
+      "components": Object {},
+      "config": Object {
+        "errorHandler": undefined,
+        "globalProperties": Object {},
+        "isCustomElement": [Function],
+        "isNativeTag": [Function],
+        "optionMergeStrategies": Object {},
+        "performance": false,
+        "warnHandler": undefined,
+      },
+      "directives": Object {},
+      "mixins": Array [
+        Object {
+          "__props": Array [],
+          "beforeCreate": [Function],
+        },
+        Object {
+          "__props": Array [],
+          "beforeCreate": [Function],
+        },
+      ],
+      "provides": Object {},
+      "reload": [Function],
+    },
+    "_props": null,
+    "component": [Function],
+    "config": Object {
+      "errorHandler": undefined,
+      "globalProperties": Object {},
+      "isCustomElement": [Function],
+      "isNativeTag": [Function],
+      "optionMergeStrategies": Object {},
+      "performance": false,
+      "warnHandler": undefined,
+    },
+    "directive": [Function],
+    "mixin": [Function],
+    "mount": [Function],
+    "provide": [Function],
+    "unmount": [Function],
+    "use": [Function],
+    "version": "3.0.0-rc.5",
+  },
+  "__setProps": [Function],
+  "componentVM": Object {
+    "__emitted": Object {},
+    "classes": Array [
+      "ha-loading",
+      "ha-loading--circular",
+      Object {
+        "ha-loading--vertical": false,
+      },
+    ],
+    "classesSpinner": Array [
+      "ha-loading__spinner",
+      Object {
+        "ha-loading__spinner--spinner": false,
+      },
+      Object {
+        "ha-loading__spinner--circular": true,
+      },
+    ],
+    "color": "#c9c9c9",
+    "isShowText": undefined,
+    "prefixCls": "ha-loading",
+    "size": "30px",
+    "styles": Object {
+      "color": "#c9c9c9",
+      "height": "30px",
+      "width": "30px",
+    },
+    "textSize": "14px",
+    "type": "circular",
+    "vertical": false,
+  },
+  "rootVM": Object {
+    "__emitted": Object {},
+  },
+}
+`;

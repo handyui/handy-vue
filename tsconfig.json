@@ -19,11 +19,6 @@
     "rootDir": ".",
     "paths": { "@": ["src"] }
   },
-  "include": ["site/**/*", "example/**/*","src/**/*", "styles/**/*"],
-  "exclude": [
-    "**/*.spec.ts",
-    "**/*.spec.js",
-    "node_modules"
-  ]
+  "include": ["site/**/*", "example/**/*", "src/**/*", "styles/**/*"],
+  "exclude": ["**/*.spec.ts", "**/*.spec.js", "src/utils/*", "node_modules"]
 }
-

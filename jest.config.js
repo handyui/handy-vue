@@ -4,9 +4,10 @@ module.exports = {
   transform: {
     '^.+\\.vue$': 'vue-jest',
     '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
-    '^.+\\.(js|jsx|ts|tsx)?$': 'babel-jest'
+    '^.+\\.(ts|tsx|jsx)?$': 'ts-jest',
+    '^.+\\.(js)?$': 'babel-jest'
   },
-  testEnvironment : 'jsdom',
+  testEnvironment: 'jsdom',
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1'
   },
@@ -15,13 +16,14 @@ module.exports = {
   testMatch: [
     // '**/test/**/*.js',
     '<rootDir>/src/**/**/*.spec.js',
-    '<rootDir>/src/**/**/*.spec.ts'
-  ],
-  // preset: 'ts-jest',
+    '<rootDir>/src/**/**/*.spec.ts',
+    '!**/utils/**'
+  ]
+  // preset: 'ts-jest'
   // coverageProvider: 'v8'
   // 'testURL': 'http://localhost',
   // 'collectCoverage': true,
   // 'collectCoverageFrom': ['src/**/**/*.{js,jsx,ts,tsx,vue}', '!**/src/**', '!**/style/**'],
   // 'coverageReporters': ['html', 'lcov', 'text-summary'],
   // 'coverageDirectory': './test/coverage'
-};
+}

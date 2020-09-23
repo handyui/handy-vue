@@ -18,6 +18,16 @@ const routes = [
     path: '/button',
     name: 'button',
     component: () => import('../components/button.vue')
+  },
+  {
+    path: '/icon',
+    name: 'icon',
+    component: () => import('../components/icon.vue')
+  },
+  {
+    path: '/loading',
+    name: 'loading',
+    component: () => import('../components/loading.vue')
   }
   //   {
   //     path: '/detail/:id',

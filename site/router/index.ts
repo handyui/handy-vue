@@ -28,6 +28,14 @@ const routes = [
         path: 'button',
         component: () => import('../views/components/ButtonPage.vue'),
       },
+      {
+        path: 'icon',
+        component: () => import('../views/components/IconPage.vue'),
+      },
+      {
+        path: 'loading',
+        component: () => import('../views/components/LoadingPage.vue'),
+      },
     ],
   },
 ]

@@ -12,7 +12,7 @@ import { useStore } from 'vuex'
 import { useRoute } from 'vue-router'
 import Simulator from "./Simulator";
 import Container from 'site/components/Container';
-import Demo from "@/button/button.md";
+import Demo from "@/button/demo.md";
 export default defineComponent({
   components: {
     Container,
