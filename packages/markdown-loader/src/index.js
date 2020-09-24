@@ -1,15 +1,15 @@
-const loaderUtils = require('loader-utils');
-const MarkdownIt = require('markdown-it');
-const markdownItAnchor = require('markdown-it-anchor');
-const frontMatter = require('front-matter');
-const highlight = require('./highlight');
-const linkOpen = require('./link-open');
-const cardWrapper = require('./card-wrapper');
-const { slugify } = require('transliteration');
+const loaderUtils = require('loader-utils')
+const MarkdownIt = require('markdown-it')
+const markdownItAnchor = require('markdown-it-anchor')
+const frontMatter = require('front-matter')
+const highlight = require('./highlight')
+const linkOpen = require('./link-open')
+const cardWrapper = require('./card-wrapper')
+const { slugify } = require('transliteration')
 
 function wrapper(content) {
-  content = cardWrapper(content);
-  content = escape(content);
+  content = cardWrapper(content)
+  content = escape(content)
 
   return `
 <template>
@@ -38,37 +38,37 @@ export default {
   }
 };
 </script>
-`;
+`
 }
 
 const parser = new MarkdownIt({
   html: true,
-  highlight,
+  highlight
 }).use(markdownItAnchor, {
   level: 2,
-  slugify,
-});
+  slugify
+})
 
-module.exports = function(source) {
-  let options = loaderUtils.getOptions(this) || {};
-  this.cacheable && this.cacheable();
+module.exports = function (source) {
+  let options = loaderUtils.getOptions(this) || {}
+  this.cacheable && this.cacheable()
 
   options = {
     wrapper,
     linkOpen: true,
-    ...options,
-  };
+    ...options
+  }
 
-  let fm;
+  let fm
 
   if (options.enableMetaData) {
-    fm = frontMatter(source);
-    source = fm.body;
+    fm = frontMatter(source)
+    source = fm.body
   }
 
   if (options.linkOpen) {
-    linkOpen(parser);
+    linkOpen(parser)
   }
 
-  return options.wrapper(parser.render(source), fm);
-};
+  return options.wrapper(parser.render(source), fm)
+}

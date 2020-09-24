@@ -14,4 +14,13 @@
   export default {}
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss">
+  .handy-markdown-doc {
+    display: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+</style>

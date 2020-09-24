@@ -6,5 +6,3 @@ Component.install = function (app: App) {
 }
 
 export default Component
-
-import './style'

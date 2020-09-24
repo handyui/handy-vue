@@ -1,6 +1,6 @@
 <template>
   <div>
-      <!-- <a-button type="primary">
+    <!-- <a-button type="primary">
       Primary
     </a-button>
     <router-link to="/helloWorld">HelloWorld</router-link> &nbsp; <router-link to="/upload">upload</router-link> &nbsp;
@@ -15,5 +15,10 @@
 </script>
 
 <style lang="scss">
-
+  body {
+    background: #000;
+  }
+  .handy-vue-demo {
+    display: none;
+  }
 </style>

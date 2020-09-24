@@ -1,19 +1,19 @@
-const path = require('path');
-const config = require('../config');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path')
+const config = require('../config')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 function resolve(dir) {
-  return path.join(__dirname, '..', dir);
+  return path.join(__dirname, '..', dir)
 }
 
-const allSource = [resolve('src'), resolve('example'), resolve('test')];
+const allSource = [resolve('src'), resolve('example'), resolve('test')]
 
 module.exports = {
   output: {
     path: config.build.assetsRoot,
     publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
     filename: '[name].js',
-    chunkFilename: '[name].js',
+    chunkFilename: '[name].js'
   },
   resolve: {
     extensions: ['.js', '.vue', '.md', '.json', '.ts', '.tsx'],
@@ -21,25 +21,26 @@ module.exports = {
       // vue: "@vue/runtime-dom",
       '@': resolve('src'),
       docs: resolve('docs'),
-      site: resolve('site'),
-    },
+      site: resolve('site')
+    }
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
-        use: { loader: "vue-loader" },
+        use: { loader: 'vue-loader' }
       },
       {
         test: /\.tsx?$/,
         use: {
-          loader: "ts-loader",
-          options: { appendTsSuffixTo: [/\.vue$/] },
-        },
+          loader: 'ts-loader',
+          options: { appendTsSuffixTo: [/\.vue$/] }
+        }
       },
       {
         test: /\.md$/,
-        use: ['vue-loader', require.resolve("../packages/markdown-loader/src/index")]
+        // use: ['vue-loader', require.resolve('../packages/markdown-loader/src/index')]
+        use: ['vue-loader', require.resolve('../packages/markdown-loader-t/src/core')]
       },
       {
         test: /\.css$/,
@@ -48,74 +49,74 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: true,
-            },
+              hmr: true
+            }
           },
-          { loader: "css-loader" },
-          { loader: "postcss-loader" },
-        ],
+          { loader: 'css-loader' },
+          { loader: 'postcss-loader' }
+        ]
       },
       {
         test: /\.scss$/,
         use: [
-          { loader: "style-loader" },
-          { loader: "css-loader" },
-          { loader: "postcss-loader" },
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          { loader: 'postcss-loader' },
           {
-            loader: "sass-loader",
+            loader: 'sass-loader'
             // options: {
             //   prependData: '@import "src/components/color/src/index.scss";',
             // },
-          },
-        ],
+          }
+        ]
       },
       {
         test: /\.(svg|png|jpe?g|gif|webp|ico)(\?.*)?$/,
         use:
-        //  {
-        //   loader: "url-loader",
-        //   options: {
-        //     limit: 4096,
-        //     fallback: {
-        //       loader: "file-loader",
-        //       options: { name: "img/[name].[hash:8].[ext]" },
-        //     },
-        //   },
-        // },
-        {
-          loader: 'url-loader',
-          options: {
-            esModule: false,
-            limit: 4096,
-            name: 'img/[name].[hash:7].[ext]',
-          },
-        }
+          //  {
+          //   loader: "url-loader",
+          //   options: {
+          //     limit: 4096,
+          //     fallback: {
+          //       loader: "file-loader",
+          //       options: { name: "img/[name].[hash:8].[ext]" },
+          //     },
+          //   },
+          // },
+          {
+            loader: 'url-loader',
+            options: {
+              esModule: false,
+              limit: 4096,
+              name: 'img/[name].[hash:7].[ext]'
+            }
+          }
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
         use: {
-          loader: "url-loader",
+          loader: 'url-loader',
           options: {
             limit: 4096,
             fallback: {
-              loader: "file-loader",
-              options: { name: "fonts/[name].[hash:8].[ext]" },
-            },
-          },
-        },
+              loader: 'file-loader',
+              options: { name: 'fonts/[name].[hash:8].[ext]' }
+            }
+          }
+        }
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-        use:[
+        use: [
           {
             loader: 'url-loader',
             options: {
               limit: 10000,
-              name: 'media/[name].[hash:7].[ext]',
-            },
+              name: 'media/[name].[hash:7].[ext]'
+            }
           }
         ]
-      },
-    ],
-  },
-};
+      }
+    ]
+  }
+}

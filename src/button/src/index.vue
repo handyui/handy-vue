@@ -27,6 +27,7 @@
   export type ButtonSize = 'large' | 'normal' | 'small' | 'mini'
 
   export default defineComponent({
+    name: 'ha-button',
     props: {
       prefixCls: {
         type: String,

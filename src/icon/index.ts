@@ -1,10 +1,8 @@
-import { App } from "vue";
-import Component from "./src/index.vue";
+import { App } from 'vue'
+import Component from './src/index.vue'
 
 Component.install = function (app: App) {
-  app.component(Component.name as string, Component);
-};
+  app.component(Component.name as string, Component)
+}
 
-export default Component;
-
-import './style'
+export default Component
